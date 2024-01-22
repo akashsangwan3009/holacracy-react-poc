@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux'
 import { logout } from '../../Redux/Slices/Auth/Auth'
+import DashboardCard from '../../Components/DashboardCard/DashboardCard'
 
 const DasboardPage = () => {
 	const distpatch = useDispatch()
@@ -22,6 +23,9 @@ const DasboardPage = () => {
 				<button className={styles.btn}>Navigate to Home</button>
 			</Link>
 			<button onClick={logoutClick}>Logout</button>
+			<div className={styles.dashboard_container}>
+				<DashboardCard />
+			</div>
 		</div>
 	)
 }

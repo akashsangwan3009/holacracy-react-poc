@@ -1,24 +1,30 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-import LoginPage from './pages/loginPage/LoginPage';
-import DasboardPage from './pages/dashboard/DasboardPage';
-import PrivateRoutes from './utils/PrivateRoutes';
+import React from "react";
+import {  connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route element={<PrivateRoutes/>}>
-            <Route path="/dashboard" element={<DasboardPage/>} exact/>
-          </Route>
-          <Route exact path="/login" element={<LoginPage/>} />
-          <Route exact path='/' element={<Navbar/>}/>
-        </Routes>
-      </Router>
-    </div>
-  );
+const App = (props)=>{
+    return(
+        <div style={{ textAlign: "center" }}>
+            <h1> Welcome to react application</h1>
+            <p><h2>Current mode:{props.mode}</h2></p>
+            <button onClick={props.enable}>Enable</button>
+            <button onClick={props.disable}>Disable</button>
+            
+        </div>
+    )
 }
 
-export default App;
+const mapStateToProps = (state)=>{
+    return{
+        mode: state.mode,
+    }
+
+}
+
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        enable:() =>dispatch({type:'ENABLE'}),
+        disable:()=>dispatch({type:'DISABLE'}),
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(App)

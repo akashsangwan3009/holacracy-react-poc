@@ -1,14 +1,156 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* @font-face {
+  font-family: "Roboto-light";
+  src: url("../src/assets/font/Roboto/Roboto-Light.ttf") format("truetype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../src/assets/font/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("../src/assets/font/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../src/assets/font/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Black";
+  src: url("../src/assets/font/Roboto/Roboto-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Plus-Jakarta-Sans";
+  src: url("../src/assets/font/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Snippet";
+  src: url("../src/assets/font/Snippet/Snippet-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../src/assets/font/Inter/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+} */
+
+:root {
+  --primary-color-900: #04569d;
+  --primary-color-800: #0376bf;
+  --primary-color-700: #0387d3;
+  --primary-color-600: #029ae7;
+  --primary-color-500: #00a1ed;
+  --primary-color-400: #27b5f8;
+  --primary-color-300: #4ec2f9;
+  --primary-color-200: #81d4fb;
+  --primary-color-100: #b3e5fd;
+  --primary-color-50: #e1f8ff;
+
+  --secondary-color-900: #600082;
+  --secondary-color-800: #7d008e;
+  --secondary-color-700: #8d0095;
+  --secondary-color-600: #9f009c;
+  --secondary-color-500: #ad00a2;
+  --secondary-color-400: #bb3aaf;
+  --secondary-color-300: #c860bd;
+  --secondary-color-200: #d88fd0;
+  --secondary-color-100: #e7bce2;
+  --secondary-color-50: #fde4fa;
+
+  --neutral-color-900: #2f3238;
+  --neutral-color-800: #424750;
+  --neutral-color-700: #525966;
+  --neutral-color-600: #636d7c;
+  --neutral-color-500: #717c8d;
+  --neutral-color-400: #868f9e;
+  --neutral-color-300: #9ca3af;
+  --neutral-color-200: #b9bdc5;
+  --neutral-color-100: #d5d7db;
+  --neutral-color-50: #f3f3f3;
+
+  --utility-color-warning-900: #f78819;
+  --utility-color-warning-800: #fab02a;
+  --utility-color-warning-700: #fbc834;
+  --utility-color-warning-600: #fddf3e;
+  --utility-color-warning-500: #f4e93a;
+  --utility-color-warning-400: #f7ee59;
+  --utility-color-warning-300: #f9f378;
+  --utility-color-warning-200: #fbf79f;
+  --utility-color-warning-100: #fdfbc6;
+  --utility-color-warning-50: #fefdeb;
+
+  --utility-color-error-900: #c10910;
+  --utility-color-error-800: #cf1e1f;
+  --utility-color-error-700: #dc2726;
+  --utility-color-error-600: #ee322c;
+  --utility-color-error-500: #fc3d2b;
+  --utility-color-error-400: #f84f49;
+  --utility-color-error-300: #ed716f;
+  --utility-color-error-200: #f59997;
+  --utility-color-error-100: #ffcdd1;
+  --utility-color-error-50: #ffecea;
+
+  --utility-color-success-900: #006703;
+  --utility-color-success-800: #00871b;
+  --utility-color-success-700: #009828;
+  --utility-color-success-600: #00aa35;
+  --utility-color-success-500: #00ba3e;
+  --utility-color-success-400: #22c55e;
+  --utility-color-success-300: #5cd07c;
+  --utility-color-success-200: #91dda2;
+  --utility-color-success-100: #beeac7;
+  --utility-color-success-50: #e6f8ec;
+
+  --utility-color-info-900: #265D60;
+  --utility-color-info-800: #2F808B;
+  --utility-color-info-700: #3394A3;
+  --utility-color-info-600: #39A9BC;
+  --utility-color-info-500: #3DB9CF;
+  --utility-color-info-400: #46C3D6;
+  --utility-color-info-300: #5DCEDE;
+  --utility-color-info-200: #87DCE8;
+  --utility-color-info-100: #B5EAF1;
+  --utility-color-info-50: #DFFAFF;
+
+  --color-black: #222222;
+  --color-light-2: #dde5e9;
+  --color-light-1: #f9f9f9;
+  --color-white: #ffffff;
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-extrabold: 800;
+
+  --drop-shadow-base: 0px 1px 2px 0px rgba(0, 0, 0, 0.06),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  --drop-shadow-medium: 0px 2px 4px 0px rgba(0, 0, 0, 0.06),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+  --drop-shadow-large: 0px 10px 15px 0px rgba(0, 0, 0, 0.1),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.05);
+  --drop-shadow-xlarge: 0px 20px 25px 0px rgba(0, 0, 0, 0.1),
+    0px 10px 10px 0px rgba(0, 0, 0, 0.04);
+  --drop-shadow-2xlarge: 0px 25px 50px 0px rgba(0, 0, 0, 0.25);
+  --drop-shadow-inner: 0px 1px 6px 0px rgba(0, 0, 0, 0.1) inset;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-white);
 }

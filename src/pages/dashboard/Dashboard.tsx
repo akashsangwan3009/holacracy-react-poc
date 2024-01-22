@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 import { logout } from '../../Redux/Slices/Auth/Auth'
 import DashboardCard from '../../Components/DashboardCard/DashboardCard'
 
-const DasboardPage = () => {
+const DasboardPage: React.FC = () => {
 	const distpatch = useDispatch()
 	const navigate = useNavigate()
 

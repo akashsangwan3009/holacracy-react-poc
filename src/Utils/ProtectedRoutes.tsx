@@ -3,7 +3,7 @@ import React from 'react'
 import { Outlet, Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-const PrivateRoutes = () => {
+const PrivateRoutes: React.FC = () => {
 	const isAuthenticated = useSelector((state: any) => state.auth.isAuthenticated)
 	console.log('Auth in Private Route', isAuthenticated)
 	return isAuthenticated ? <Outlet /> : <Navigate to="/" />

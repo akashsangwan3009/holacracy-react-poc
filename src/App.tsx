@@ -8,7 +8,7 @@ import DasboardPage from './Pages/Dashboard/Dashboard'
 import LoginPage from './Pages/Login/Login'
 import Navbar from './Components/Navbar/Navbar'
 
-function App() {
+const App: React.FC = () => {
 	return (
 		<div className="App">
 			<Routes>

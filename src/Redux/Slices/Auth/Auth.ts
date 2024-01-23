@@ -1,26 +1,39 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 interface AuthState {
-  isAuthenticated: boolean;
+	isAuthenticated: boolean
 }
 
 const initialState: AuthState = {
-  isAuthenticated: false,
+	isAuthenticated: false,
 }
 
 const authSlice = createSlice({
-  name: 'auth', // Fix the slice name to 'auth'
-  initialState,
-  reducers: {
-    login: (state) => {
-      state.isAuthenticated = true;
-    },
-    logout: (state) => {
-      state.isAuthenticated = false;
-    },
-  },
-});
+	name: 'auth',
+	initialState,
+	reducers: {
+		login: (state) => {
+			state.isAuthenticated = true
+		},
+		logout: (state) => {
+			state.isAuthenticated = false
+		},
+	},
+	extraReducers: (builder) => {
+		builder.addCase(asyncLogin.fulfilled, (state) => {
+			console.log('Logged In...')
+		})
+	},
+})
 
-export const { login, logout } = authSlice.actions;
+export const asyncLogin = createAsyncThunk(
+	'auth/asyncLogin',
+	async (state, { dispatch }) => {
+		await new Promise((res) => setTimeout(() => res, 1000))
+		dispatch(login())
+	}
+)
 
-export default authSlice.reducer;
+export const { login, logout } = authSlice.actions
+
+export default authSlice.reducer

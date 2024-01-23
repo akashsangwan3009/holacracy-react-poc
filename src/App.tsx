@@ -12,9 +12,14 @@ const App: React.FC = () => {
 	return (
 		<div className="App">
 			<Routes>
-				<PrivateRoutes>
-					<Route path="/dashboard" element={<DasboardPage />} />
-				</PrivateRoutes>
+				<Route
+					path="/dashboard"
+					element={
+						<PrivateRoutes>
+							<DasboardPage />
+						</PrivateRoutes>
+					}
+				/>
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/" element={<Navbar />} />
 			</Routes>

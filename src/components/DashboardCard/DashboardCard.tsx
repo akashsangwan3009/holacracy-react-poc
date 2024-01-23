@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./DashboardCard.module.css"
+import styles from './DashboardCard.module.css'
 import usePokemonData from '../../Services/usePokemonData'
 
 const DashboardCard: React.FC = () => {

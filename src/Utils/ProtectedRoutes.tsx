@@ -1,7 +1,10 @@
 import React from 'react'
-import { Navigate, Outlet } from 'react-router-dom'
+
 import { useSelector } from 'react-redux'
 import { RootType } from '../Redux/Store'
+import { useNavigate } from 'react-router-dom'
+
+import Navbar from '../Components/Navbar/Navbar'
 
 interface PrivateRouteProps {
 	children: React.ReactNode
@@ -14,11 +17,19 @@ const PrivateRoutes: React.FC<PrivateRouteProps> = ({ children }) => {
 		(state: RootType) => state.auth.isAuthenticated
 	)
 
-	return isAuthenticated ? (
-		<Outlet />
-	) : (
-		<Navigate to="/login" replace state={{ from: location }} />
-	)
+	const navigate = useNavigate()
+
+	React.useEffect(() => {
+		if (!isAuthenticated) {
+			const timeoutId = setTimeout(() => {
+				navigate('/')
+			}, 0)
+
+			return () => clearTimeout(timeoutId)
+		}
+	}, [isAuthenticated, navigate])
+
+	return isAuthenticated ? <>{children}</> : <Navbar />
 }
 
 export default PrivateRoutes

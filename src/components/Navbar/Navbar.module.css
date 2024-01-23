@@ -1,4 +1,5 @@
 .btn {
     background-color: aquamarine;
     color: black;
+    cursor: pointer;
 }

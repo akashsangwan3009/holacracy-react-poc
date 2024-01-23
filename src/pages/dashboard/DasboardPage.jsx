@@ -5,11 +5,11 @@ import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../redux/actions'
 
-const DasboardPage = () => {
-
-  const distpatch=useDispatch();
+const DashboardPage = () => {
+  
+  const dispatch=useDispatch();
   const navigate=useNavigate();
-  const {logoutAction}=bindActionCreators(actionCreators, distpatch)
+  const {logoutAction}=bindActionCreators(actionCreators, dispatch)
 
   const logoutClick=()=>{
     logoutAction(false);
@@ -18,7 +18,7 @@ const DasboardPage = () => {
 
   return (
     <div>
-      dasboradPage
+      dashboard
       <Link to="/">
           <button className={styles.btn}>Navigate to Home</button>
       </Link >
@@ -27,8 +27,9 @@ const DasboardPage = () => {
         Logout
       </button>
 
+      
     </div>
   )
 }
 
-export default DasboardPage
+export default DashboardPage

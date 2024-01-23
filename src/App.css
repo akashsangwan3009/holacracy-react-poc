@@ -1,38 +1,208 @@
-.App {
-	text-align: center;
-}
-
-.App-logo {
-	height: 40vmin;
+img {
+	width: 100%;
+	object-fit: cover;
 	pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
+a {
+	text-decoration: none;
 }
 
-.App-header {
-	background-color: #282c34;
-	min-height: 100vh;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.hidden {
+	overflow-y: hidden;
+}
+
+.scroll {
+	overflow-y: scroll;
+}
+
+.display_flex {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+}
+
+.flex__center {
+	display: flex;
 	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+	align-items: center;
 }
 
-.App-link {
-	color: #61dafb;
+.absolute__center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-@keyframes App-logo-spin {
-	from {
+.section__padding {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	padding-left: 6rem;
+	padding-right: 6rem;
+}
+
+/* Horizontal Scrollbar CSS */
+
+.horizontal-scroll-primary {
+	overflow-x: scroll;
+}
+
+.horizontal-scroll-primary::-webkit-scrollbar {
+	height: 4px;
+}
+
+.horizontal-scroll-primary::-webkit-scrollbar-track {
+	background-color: #e5e7eb;
+}
+
+.horizontal-scroll-primary::-webkit-scrollbar-thumb {
+	background-color: #73b2ff;
+	border-radius: 10px;
+}
+
+.horizontal-scroll-secondary {
+	overflow-x: scroll;
+}
+
+.horizontal-scroll-secondary::-webkit-scrollbar {
+	height: 4px;
+}
+
+.horizontal-scroll-secondary::-webkit-scrollbar-track {
+	background-color: #e5e7eb;
+}
+
+.horizontal-scroll-secondary::-webkit-scrollbar-thumb {
+	background-color: #9ca3af;
+	border-radius: 10px;
+}
+
+/* Vertical Scrollbar CSS */
+
+.vertical-scroll-primary {
+	overflow-y: scroll;
+}
+
+.vertical-scroll-primary::-webkit-scrollbar {
+	width: 4px;
+}
+
+.vertical-scroll-primary::-webkit-scrollbar-track {
+	background-color: #e5e7eb;
+}
+
+.vertical-scroll-primary::-webkit-scrollbar-thumb {
+	background-color: #73b2ff;
+	border-radius: 10px;
+}
+
+.vertical-scroll-secondary {
+	overflow-y: scroll;
+}
+
+.vertical-scroll-secondary::-webkit-scrollbar {
+	width: 4px;
+}
+
+.vertical-scroll-secondary::-webkit-scrollbar-track {
+	background-color: #e5e7eb;
+}
+
+.vertical-scroll-secondary::-webkit-scrollbar-thumb {
+	background-color: #9ca3af;
+	border-radius: 10px;
+}
+
+/* Loader Component CSS */
+
+.loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99999;
+}
+
+.spinner {
+	border: 4px solid rgba(255, 255, 255, 0.3);
+	border-top: 4px solid #ffffff;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+	0% {
 		transform: rotate(0deg);
 	}
-	to {
+
+	100% {
 		transform: rotate(360deg);
+	}
+}
+
+/* Input Field Error Animation CSS */
+
+.error-bounce {
+	outline: 0;
+	animation-name: bounce;
+	animation-duration: 0.3s;
+	animation-delay: 0s;
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateX(0px);
+		timing-function: ease-in;
+	}
+
+	37% {
+		transform: translateX(5px);
+		timing-function: ease-out;
+	}
+
+	55% {
+		transform: translateX(-5px);
+		timing-function: ease-in;
+	}
+
+	73% {
+		transform: translateX(4px);
+		timing-function: ease-out;
+	}
+
+	82% {
+		transform: translateX(-4px);
+		timing-function: ease-in;
+	}
+
+	91% {
+		transform: translateX(2px);
+		timing-function: ease-out;
+	}
+
+	96% {
+		transform: translateX(-2px);
+		timing-function: ease-in;
+	}
+
+	100% {
+		transform: translateX(0px);
+		timing-function: ease-in;
 	}
 }

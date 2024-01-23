@@ -1,14 +1,14 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-import LoginPage from './pages/loginPage/LoginPage';
-import DasboardPage from './pages/dashboard/DasboardPage';
-import PrivateRoutes from './utils/PrivateRoutes';
-
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import Navbar from './components/Navbar/Navbar';
+// import LoginPage from './pages/loginPage/LoginPage';
+// import DasboardPage from './pages/dashboard/DasboardPage';
+// import PrivateRoutes from './utils/PrivateRoutes';
+import Counter from './pages/Counter/Counter';
 function App() {
   return (
     <div className="App">
-      <Router>
+      {/* <Router>
         <Routes>
           <Route element={<PrivateRoutes/>}>
             <Route path="/dashboard" element={<DasboardPage/>} exact/>
@@ -16,7 +16,8 @@ function App() {
           <Route exact path="/login" element={<LoginPage/>} />
           <Route exact path='/' element={<Navbar/>}/>
         </Routes>
-      </Router>
+      </Router> */}
+      <Counter/>
     </div>
   );
 }

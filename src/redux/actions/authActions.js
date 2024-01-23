@@ -1,4 +1,5 @@
 import {LOGIN,LOGOUT} from "../../utils/constant.js"
+import { INCREMENT,DECREMENT } from "../../utils/constant.js"
 
 
 export const loginAction=(value)=>{
@@ -16,5 +17,19 @@ export const logoutAction=(value)=>{
             type:LOGOUT,
             payload:value
         })
+    }
+}
+
+
+export const incNumber = ()=>{
+    return{
+        type:INCREMENT,
+
+    }
+}
+
+export const decNumber = ()=>{
+    return{
+        type:DECREMENT
     }
 }

@@ -1,6 +1,5 @@
-// components/PokemonInfo.tsx
 import React from 'react';
-import styles from './PokemonCard.module.css'; // Import the CSS Module
+import styles from './PokemonCard.module.css';
 import usePokemonData from '../../../Services/usePokemonData';
 
 const PokemonCard: React.FC = () => {

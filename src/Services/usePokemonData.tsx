@@ -14,20 +14,20 @@ const fetchPokemonData = async (): Promise<any> => {
 	return response.json()
 }
 
-const postPokemonData = async (params: any): Promise<any> => {
-	const response = await fetch(import.meta.env.VITE_POKEMON_ENDPOINT, {
-		method: 'POST',
-		body: JSON.stringify(params),
-		headers: {
-			'Content-Type': 'application/json',
-		},
-	})
+// const postPokemonData = async (params: any): Promise<any> => {
+// 	const response = await fetch(import.meta.env.VITE_POKEMON_ENDPOINT, {
+// 		method: 'POST',
+// 		body: JSON.stringify(params),
+// 		headers: {
+// 			'Content-Type': 'application/json',
+// 		},
+// 	})
 
-	if (!response.ok) {
-		throw new Error('Network response was not ok')
-	}
-	return response.json()
-}
+// 	if (!response.ok) {
+// 		throw new Error('Network response was not ok')
+// 	}
+// 	return response.json()
+// }
 
 const usePokemonData = (): UseQueryResult<any> => {
 	return useQuery<any>({

@@ -3,9 +3,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { RootType } from '../Redux/Store'
 import { useNavigate } from 'react-router-dom'
-import LoginForm from '../Components/Molecules/LoginForm/LoginForm'
 
-// import Navbar from '../Components/Navbar/Navbar'
+import LoginForm from '../Components/Molecules/LoginForm/LoginForm'
 
 interface PrivateRouteProps {
 	children: React.ReactNode

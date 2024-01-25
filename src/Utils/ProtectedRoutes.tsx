@@ -3,8 +3,9 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { RootType } from '../Redux/Store'
 import { useNavigate } from 'react-router-dom'
+import LoginForm from '../Components/Molecules/LoginForm/LoginForm'
 
-import Navbar from '../Components/Navbar/Navbar'
+// import Navbar from '../Components/Navbar/Navbar'
 
 interface PrivateRouteProps {
 	children: React.ReactNode
@@ -29,7 +30,7 @@ const PrivateRoutes: React.FC<PrivateRouteProps> = ({ children }) => {
 		}
 	}, [isAuthenticated, navigate])
 
-	return isAuthenticated ? <>{children}</> : <Navbar />
+	return isAuthenticated ? <>{children}</> : <LoginForm onLogin={() => {navigate('/pokemonCard')}}/>
 }
 
 export default PrivateRoutes

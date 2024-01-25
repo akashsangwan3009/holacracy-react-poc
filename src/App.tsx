@@ -4,24 +4,27 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 
 import PrivateRoutes from './Utils/ProtectedRoutes'
-import DasboardPage from './Pages/Dashboard/Dashboard'
+import DasboardPage from './Pages/Pokemon/Dashboard'
 import LoginPage from './Pages/Login/Login'
-import Navbar from './Components/Navbar/Navbar'
 
 const App: React.FC = () => {
 	return (
 		<div className="App">
 			<Routes>
 				<Route
-					path="/dashboard"
+					path="/pokemonCard"
 					element={
 						<PrivateRoutes>
 							<DasboardPage />
 						</PrivateRoutes>
 					}
 				/>
-				<Route path="/login" element={<LoginPage />} />
-				<Route path="/" element={<Navbar />} />
+				<Route
+					path="/"
+					element={
+						<LoginPage />
+					}
+				/>
 			</Routes>
 		</div>
 	)

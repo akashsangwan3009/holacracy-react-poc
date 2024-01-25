@@ -1,13 +1,13 @@
-.btn {
-	background-color: bisque;
-	color: black;
-}
-
-.dashboard_container {
+.dashboardPage {
 	width: 100%;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.dashboardMain {
+	display: flex;
 	flex-direction: column;
+	gap: 10px;
 }

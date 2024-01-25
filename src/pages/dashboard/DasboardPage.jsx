@@ -4,6 +4,7 @@ import styles from "./Dashboard.module.css"
 import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../redux/actions'
+import Counter from '../counterPage/counter'
 
 const DashboardPage = () => {
   
@@ -26,7 +27,7 @@ const DashboardPage = () => {
       <button onClick={logoutClick}>
         Logout
       </button>
-
+      <Counter/>
       
     </div>
   )

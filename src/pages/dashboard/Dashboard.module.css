@@ -1,4 +1,26 @@
-.btn{
-    background-color: bisque;
-    color: black;
-}
+/* Basic btn styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    color: #3498db;
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  }
+  
+  /* Hover effect */
+  .btn:hover {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  /* Click effect */
+  .btn:active {
+    transform: scale(0.95);
+  }
+  
